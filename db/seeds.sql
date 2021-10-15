@@ -4,12 +4,12 @@ VALUES ("Engineering"),
        ("Legal"),
        ("Sales");
 
-INSERT INTO role (name, department)
-VALUES ("Sales Lead", 4),
-       ("Salesperson", 4),
-       ("Lead Engineer", 1),
-       ("Software Engineer", 1),
-       ("Account Manager", 2),
-       ("Accountant", 2),
-       ("Legal Team Lead", 3);
-       ("Lawyer", 3);       
+INSERT INTO role (title, department, salary)
+VALUES ("Sales Lead", 4, 100000),
+       ("Salesperson", 4, 8000),
+       ("Lead Engineer", 1, 150000),
+       ("Software Engineer", 1, 120000),
+       ("Account Manager", 2, 160000),
+       ("Accountant", 2, 125000),
+       ("Legal Team Lead", 3, 250000);
+       ("Lawyer", 3, 190000);       
