@@ -11,5 +11,15 @@ VALUES ("Sales Lead", 4, 100000),
        ("Software Engineer", 1, 120000),
        ("Account Manager", 2, 160000),
        ("Accountant", 2, 125000),
-       ("Legal Team Lead", 3, 250000);
-       ("Lawyer", 3, 190000);       
+       ("Legal Team Lead", 3, 250000),
+       ("Lawyer", 3, 190000);  
+
+INSERT INTO employee (first_name, last_name, role, department, salary, manager)     
+VALUES ("John", "Doe", 1),
+       ("Mike", "Chan", 2),
+       ("Ashley", "Rodriquez", 3),
+       ("Kevin", "Tupik", 4),
+       ("Kunal", "Singh", 5),
+       ("Malia", "Brown", 6),
+       ("Sarah", "Lourd", 7),
+       ("Tom", "Allen", 8);  
