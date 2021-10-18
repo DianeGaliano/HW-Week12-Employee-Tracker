@@ -9,24 +9,24 @@ CREATE TABLE department (
     name VARCHAR (30) NOT NULL
 );
 
-CREATE TABLE role (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE roles (
+    id INT NOT NULL PRIMARY KEY,
     title VARCHAR (30) NOT NULL,
-    salary DECIMAL 
-    department INT,
-    FOREIGN KEY (department),
-    REFERENCES department(id) 
+    salary DECIMAL,
+    department_id INT,
+    FOREIGN KEY (department_id)
+    REFERENCES department(id)
 );
 
 CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR (30) NOT NULL,
     last_name VARCHAR (30) NOT NULL, 
-    role INT,
-    FOREIGN KEY (role),
-    REFERENCES role(id),
-    manager INT,
-    FOREIGN KEY (manager),
-    REFERENCES manager(id),
-    ON DELETE SET NULL
+    roles_id INT,
+    FOREIGN KEY (roles_id)
+    REFERENCES roles(id)
+    -- manager_id INT,
+    -- FOREIGN KEY (manager_id)
+    -- REFERENCES manager(id)
+    -- ON DELETE SET NULL
 );
