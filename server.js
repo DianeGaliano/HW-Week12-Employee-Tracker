@@ -2,10 +2,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const express = require('express');
 
-// Import the connection object
+//Sequlize to protect my password
 const sequelize = require('./config/connection');
-const { update } = require("lodash");
-const { connect } = require("http2");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -13,24 +11,11 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to the database before starting the Express.js server
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-db.query('SELECT * FROM students', function (err, results) {
-    console.log(results);
-  });
-  
-  // Default response for any other request (Not Found)
-  app.use((req, res) => {
-    res.status(404).end();
-  });
-  
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-
+//Quesions
 inquirer
     .promt ([
         {
@@ -49,6 +34,7 @@ inquirer
         },
     ])
 
+    //function to init question requests
     .then(function(answer){
         if (answer.action === "View all employees") {
           viewEmployee();
@@ -66,3 +52,5 @@ inquirer
           connection.end();
         }
     });
+
+    
