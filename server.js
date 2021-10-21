@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const express = require('express');
+//Imort and Requre mysql2
+const mysql = require("mysql2");
 
 //Sequlize to protect my password
 const sequelize = require('./config/connection');
